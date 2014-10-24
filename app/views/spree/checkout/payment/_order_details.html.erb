@@ -1,4 +1,4 @@
 
-  <% if @order.payment.completed? %>
+  <% if @order.payments.last.completed? %>
     Seu pagamento foi aprovado pelo PagSeguro através da transação de código: <%= @order.payment_notifications.last.transaction_id if @order.payment_notifications.present? %>
   <% end %>
